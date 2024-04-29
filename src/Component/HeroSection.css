@@ -1,0 +1,180 @@
+.hero {
+  display: flex;
+  background-color: #e1c2e5; /* Background color */
+  height: 100vh; /* Full viewport height */
+  padding: 150px 0; /* Adjust padding as needed */
+  
+}
+
+.hero-left {
+  flex: 0.5; /* 65% width */
+  background-color:#e1c2e5; /* Background color for left column */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:90px;
+  margin-left: 50px;
+}
+
+
+.hero-right {
+  flex: 0.5; /* 35% width */
+  margin-top:auto;
+  background-color: #e1c2e5; /* Background color for right column */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 170px;
+
+}
+
+
+.hero-heading {
+  font-size: 78px; /* Larger text size */
+  color: black; /* Darker color */
+  text-transform: uppercase; /* All caps */
+  margin-bottom: 20px;
+}
+
+.changing-text-grid {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr); /* Four rows */
+
+}
+
+.changing-text {
+  font-size: 78px; /* Smaller text size */
+  color: purple; /* Slightly darker color */
+  transition: opacity 0.3s ease; /* Smooth transition */
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.changing-text.active {
+  opacity: 1; /* Show active text */
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 17px;
+  border: 2px solid purple;
+  border-radius: 20px;
+  width: 450px;
+  
+}
+
+.search-button {
+  background-color: purple;
+  color: white;
+  border: none;
+  font-size: 15px;
+  margin-left: 10px;
+  padding: 20px 30px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #7b68ee; /* Darker purple on hover */
+}
+
+.hero-image {
+  max-width: 100%; /* Ensure image doesn't exceed container */
+  max-height: 100%; /* Ensure image doesn't exceed container */
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+}
+
+.image-container img {
+  max-width: 100%; /* Ensure the image doesn't exceed the container */
+  max-height: 100%; /* Ensure the image doesn't exceed the container */
+}
+
+.banner {
+  background-color: purple;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1300px) { 
+
+  .hero-heading {
+    font-size: 70px; /* Larger text size */
+    color: black; /* Darker color */
+    text-transform: uppercase; /* All caps */
+    margin-bottom: 20px;
+  }
+  
+  .changing-text-grid {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr); /* Four rows */
+  
+  }
+  
+  .changing-text {
+    font-size: 70px; /* Smaller text size */
+    color: purple; /* Slightly darker color */
+    transition: opacity 0.3s ease; /* Smooth transition */
+    text-align: left;
+    margin-bottom: 20px;
+  }
+
+  .search-input {
+    padding: 15px;
+    border: 2px solid purple;
+    border-radius: 20px;
+    width: 350px;
+    
+  }
+  
+  .search-button {
+    background-color: purple;
+    color: white;
+    border: none;
+    font-size: 15px;
+    margin-left: 10px;
+    padding: 15px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .hero-left {
+  flex: 0.5; /* 65% width */
+  background-color:#e1c2e5; /* Background color for left column */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:100px;
+  margin-left: 0px;
+
+}
+
+
+.hero-right {
+  flex: 0.5; /* 35% width */
+  margin-top:-100px;
+  background-color: #e1c2e5; /* Background color for right column */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.hero-image {
+  max-width: 100%; /* Ensure image doesn't exceed container */
+  max-height: 100%; /* Ensure image doesn't exceed container */
+  
+  margin-top: 300px;
+}
+
+
+}

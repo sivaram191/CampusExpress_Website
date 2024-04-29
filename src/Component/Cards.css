@@ -1,0 +1,134 @@
+.cards-container {
+    background-color: "";
+    padding: 5rem;
+    display: flex;
+  }
+  
+  .pincode-card{
+    border-radius: 40px;
+    background-size: cover;
+    width: 40vw;
+    height: 70vh;
+    margin-right: 3rem;
+  }
+  .rate-calc-card {
+    border-radius: 40px;
+    background-size: cover;
+    width: 40vw;
+    height: 70vh;
+    
+  }
+  
+  .pincode-card {
+    background-image: url('../assets/pincodeImage1.png');
+    margin-bottom: 3rem;
+    
+  }
+  
+  .rate-calc-card {
+    background-color: rgba(88, 50, 168, 0.75);
+    background-image: url('../assets/RateCalcImg.png');
+    margin-bottom: 0;
+  }
+  
+  .ratecardtitle-container {
+    margin: 1.5rem 3rem;
+  }
+  .pincardtitle-container {
+    margin: 1.5rem 3rem;
+  }
+  
+  .pincardtitle {
+    font-weight: 900;
+    font-size: 44.904px;
+    color: #0E0E0E;
+    font-family: Archivo;
+    letter-spacing: 2.245px;
+  }
+  
+  .pincardsubtitle {
+    font-weight: 900;
+    font-size: 44.904px;
+    color: #902FC6;
+    font-family: Archivo;
+    letter-spacing: 2.245px;
+    margin-top: -2rem;
+    margin-left: 1rem;
+    text-transform: capitalize;
+  }
+  .ratecardtitle {
+    font-weight: 900;
+    font-size: 44.904px;
+    color: #0E0E0E;
+    font-family: Archivo;
+    letter-spacing: 2.245px;
+  }
+  
+  .ratecardsubtitle {
+    font-weight: 900;
+    font-size: 44.904px;
+    color: #902FC6;
+    font-family: Archivo;
+    letter-spacing: 2.245px;
+    margin-top: -2rem;
+    margin-left: 1rem;
+    text-transform: capitalize;
+  }
+  
+  .location-icon {
+    width: 300px;
+    height: 300px;
+    margin-left: 20rem;
+    margin-top: -3rem;
+  }
+  
+  .pincarddescription {
+    color: #000000;
+    font-family: Archivo;
+    font-size: 14.904px;
+    font-weight: 400;
+    letter-spacing: 2.245px;
+    text-transform: capitalize;
+    padding-top: 0.5rem;
+    padding-bottom: 2rem;
+    margin-left: 1rem;
+  }
+  
+  .pincardbutton {
+    align-self: center;
+    margin-top: 4rem;
+    margin-left: 1rem;
+    font-size: 0.8rem;
+    border-radius: 8px;
+  }
+
+  .ratecarddescription {
+    color: #000000;
+    font-family: Archivo;
+    font-size: 14.904px;
+    font-weight: 400;
+    letter-spacing: 2.245px;
+    text-transform: capitalize;
+    padding-top: 0.5rem;
+    padding-bottom: 2rem;
+    margin-left: 1rem;
+  }
+  
+  .ratecardbutton {
+    align-self: center;
+    margin-top: 4rem;
+    margin-left: 1rem;
+    font-size: 0.8rem;
+    border-radius: 8px;
+    border: 0.937px solid #FFF;
+    background-image: linear-gradient(to right, rgba(68, 81, 201, 1) 0%, rgba(112, 61, 196, 1) 100%);
+    box-shadow: 6.557px 3.747px 9.18px 0px rgba(0, 0, 0, 0.25);
+  }
+ 
+  .arrow-icon {
+    width: 100px;
+    height: 100px;
+    margin-top: 24rem;
+    margin-left: -9rem;
+  }
+  

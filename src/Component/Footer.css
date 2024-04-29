@@ -1,0 +1,150 @@
+.footer {
+  color: #ffffff;
+  padding: 40px 0;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to right, rgb(190, 83, 221), rgb(114, 83, 221));
+}
+
+.footer-bottom::before {
+  content: '';
+  display: block;
+  width: 45%;
+  height: 1px;
+  background-color: white;
+  margin: 0 auto;
+}
+
+.manfooter {
+  height: 400px;
+  width: 200px;
+  margin-top: -150px;
+  background: transparent;
+}
+
+.footer-right-image {
+  width: 150px;
+  height: 100px;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.footer-section {
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: -10px;
+}
+
+.footer-heading {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer-add {
+  width: max-content;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.social-icon {
+  color: #ffffff;
+  font-size: 20px;
+  padding: 3px;
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  text-align: center;
+  height: 50px;
+  width: 100%;
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .footer-content {
+    flex-wrap: nowrap;
+  }
+
+  .footer-section {
+    width: auto;
+    margin-right: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding-left: 10px;
+    padding-right: 20px;
+    background-color: #ffffff;
+  }
+  
+  .footer-content {
+    flex-wrap: wrap;
+    margin-left: -25px;
+    margin-right: 10px;
+  }
+
+  .footer-section {
+    width: 100%;
+    margin-bottom: -10px;
+    padding: 0 20px;
+    color: black;
+  }
+
+  .footer-section h3 {
+    color: black;
+    font-style: italic;
+  }
+
+  .footer-heading {
+    margin-top: 20px;
+  }
+
+  .container {
+    margin: 0 auto;
+    width: 109%;
+    margin-top: -30px;
+    min-width: 100px;
+    margin-left: -12px;
+    padding: 0 20px;
+    background: linear-gradient(to right, rgb(190, 83, 221), rgb(114, 83, 221));
+  }
+
+  .social-icon {
+    color: black;
+    padding: 3px;
+  }
+
+  .footer-bottom {
+    color: black;
+  }
+}
