@@ -15,7 +15,7 @@ function Cards() {
           </div>
           <img src={location} alt="Location Icon" className="location-icon" />
           <Text className="pincarddescription">Discover the coverage and availability of our logistics services by entering your pincode.</Text>
-          <Button className="pincardbutton" onClick={() => window.location.href = '/Pincode'}>Get Started</Button>
+          <Button className="pincardbutton" onClick={() => window.location.href = '/Pincode'}>📌 Pincode Serviceability</Button>
         </Paper>
 
         <Paper className="rate-calc-card">
@@ -24,7 +24,7 @@ function Cards() {
             <Text className="ratecardsubtitle" color="white">Calculator</Text>
           </div>
           <Text className="ratecarddescription">Estimate shipping costs and delivery charges effortlessly with our user-friendly rate calculator tool.</Text>
-          <Button className="ratecardbutton" color="white">⌕ Explore</Button>
+          <Button className="ratecardbutton" color="white">📅 Rate Calculator</Button>
         </Paper>
         <img src={arrow} className="arrow-icon" />
       </div>
