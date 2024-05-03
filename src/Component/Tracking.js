@@ -2,6 +2,35 @@ import React, { useState, useEffect, useRef } from 'react';
 import './Tracking.css';
 import timg from "../assets/timg.png";
 
+const formatDate = (dateString) => {
+  const options = { month: 'short', day: 'numeric' };
+  return new Date(dateString).toLocaleDateString('en-UK', options);
+};
+
+const getStatusText = (status) => {
+  switch (status) {
+    case 'DELIVERED':
+      return 'DELIVERED';
+
+      case 'MANIFESTED':
+        return 'Placed';
+
+      case 'REACH_DESTINATION':
+        return 'REACHED DESTINATION CITY';
+
+      case 'UNDEL_REATTEMPT':
+        return 'IN-TRANSIT';
+
+      case 'LEFT_ORIGIN':
+        return 'IN-TRANSIT';
+      case 'OFD':
+        return 'OUT FOR DELIVERY';
+    default:
+      return status;
+  }
+};
+
+
 const Tracking = () => {
   const [trackingNumber, setTrackingNumber] = useState('');
   const [trackingDetails, setTrackingDetails] = useState(null);
@@ -63,15 +92,21 @@ const Tracking = () => {
     fetch(`https://btob.api.delhivery.com/v2/track/${trackingNumber}`)
       .then(response => response.json())
       .then(data => {
-        setTrackingDetails(data);
-        setError(null);
+        if (!data || Object.keys(data).length === 0) {
+          setError('Please enter a valid tracking number.');
+          setTrackingDetails(null);
+        } else {
+          setTrackingDetails(data);
+          setError(null);
+        }
       })
       .catch(error => {
         console.error('Error fetching tracking details:', error);
         setError('Error fetching tracking details. Please try again.');
         setTrackingDetails(null);
       });
-  };
+};
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -80,9 +115,8 @@ const Tracking = () => {
 
   return (
     <div className="tracking-container">
-      
       <div className="timage-container">
-      <h1 className="tadd">Welcome To Campus Express Tracking Page</h1>
+        <h1 className="tadd">Welcome To Campus Express Tracking Page</h1>
         <img src={timg} alt="Tracking" className="independent-image" />
       </div>
       <div className="ttext-container">
@@ -127,31 +161,19 @@ const Tracking = () => {
                 <div className="message message-4">Delivered</div>
               </div>
             </div>
-            <table>
-              <tbody>
-              <tr>
-                <td>Status:  {trackingDetails.status}</td>
-                <td>Origin City:  {trackingDetails.origin_city}</td>
-                <td>Destination City:  {trackingDetails.destination_city}</td>
-                
-              </tr>
-              <tr>
-                <td>LR Number:  {trackingDetails.lrnum}</td>
-                <td>Count:  {trackingDetails.count}</td>
-                <td>Location:  {trackingDetails.location}</td>
-              </tr>
-              <tr>
-                <td>Timestamp:  {trackingDetails.timestamp}</td>
-                <td>Scan Remark:  {trackingDetails.scan_remark}</td>
-                <td>MWBN:  {trackingDetails.mwbn}</td>
-              </tr>
-              <tr>
-                <td>Pickup Date:  {trackingDetails.pickup_date}</td>
-                <td>Manifested Date:  {trackingDetails.manifested_date}</td>
-                <td>Delivered Date:  {trackingDetails.delivered_date}</td>
-              </tr>
-              </tbody>
-            </table>
+            <div className="del-status">
+              <div className="arrival-info">
+                {trackingDetails.status === 'DELIVERED' ? (
+                  <div className="arrival-text">Delivered on</div>
+                ) : (
+                  <div className="arrival-text">Arriving on</div>
+                )}
+              </div>
+              <div className="status">
+              <div className="status-text">{getStatusText(trackingDetails.status)}</div>
+              </div>
+              <div className="estimated-date">{formatDate(trackingDetails.estimated_date)}</div>
+            </div>
           </div>
         )}
       </div>
