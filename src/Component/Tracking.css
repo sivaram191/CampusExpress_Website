@@ -82,7 +82,7 @@ body {
   
   .tbox-heading {
     color: #2e2d2d;
-    font-family:Archivo;
+    font-family: Roboto, sans-serif;
     font-size: 23px;
     font-style: normal;
     font-weight: 600;
@@ -99,7 +99,7 @@ body {
     color: #191919;
     margin-top: 50px;
     margin-left: -280px;
-    font-family: Archivo;
+    font-family: Roboto, sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
@@ -618,4 +618,59 @@ top: 20px;
 left: 64%;
 background:#bbb;
 }
+
+.del-status {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: max-content;
+  max-height:max-content;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 200px;
+  background-color: #fff;
+}
+
+.status {
+  background-color:#c8fad9;
+  color:#018b71;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  border: 1px solid #ebf8f4; 
+  width: max-content;
+  margin-left: 300px;
+  font-family: Roboto, sans-serif;
+ margin-top: -25px;
+}
+
+.status-text {
+  font-weight: bold;
+}
+
+.arrival-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.arrival-text {
+  align-self: flex-end;
+  font-size: 16px;
+  color: #000;
+  font-weight: 500;
+  font-family:Roboto, sans-serif;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.estimated-date {
+  font-weight: bold;
+  font-family:Roboto, sans-serif;
+  margin-left:32px;
+  font-size:x-large;
+}
+
 
