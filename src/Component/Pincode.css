@@ -2,13 +2,39 @@
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  min-height: 100vh;
+  height: max-content;
+  margin-bottom: 200px;
 }
 .Header-imgp{
- margin-top: 50px;
- width: 23px;
- height: 20px;
+ margin-top: 70px;
 }
+
+.Header-imgp1{
+  width:85%;
+  margin-left: -1rem;
+  height: 70%;
+  margin-top: 5rem;
+ }
+
+ .overlay-blockp {
+  position: absolute; 
+  height: 70px;
+  width: 90%;
+  background-color: #AC2DE3; /* Semi-transparent black color */
+  z-index: 1; /* Set a higher z-index than form container to ensure it's displayed above */
+  margin-top: -2rem;
+}
+
+.overlay-blockp label1 {
+  color: #FFF;
+  font-family: Archivo;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.2px;
+}
+
 
 
 header {
@@ -19,32 +45,24 @@ header {
   background-color: rgb(251, 251, 251);
   background-size: cover;
   background-position: center;
+  margin-top: -1.75rem;
 }
 
 .header-content {
   position: absolute;
   top: 50%;
-  left: 10%;
+  left: 6%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgb(255, 255, 255);
   padding: 20px;
   width: 400px;
   height: 400px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-  margin-top: 70px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-top: 100px;
   margin-left: 650px;
 }
 
-.header-content h1 {
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 29px;
-  margin-bottom: 10px;
-  margin-left: 12%;
-  color: #ffffff;
-}
 
 .input-container {
   display: flex;
@@ -56,14 +74,18 @@ header {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
+  margin-top: 2.5rem;
 }
 
 .input-group label {
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
+  font-family: Archivo;
   font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.23px;
+  color: #000000;
   margin-bottom: 10px;
-  color: #ffffff;
 }
 
 .input-group input {
@@ -83,20 +105,20 @@ header {
   font-family: 'Roboto', sans-serif;
   font-style: bold;
   font-size: 16px;
-  margin-top: 15px;
+  margin-top: 30px;
   border-radius: 5px;
-  background-color: darkorange;
+  background: linear-gradient(86deg, #A547D9 -26.52%, #5D1586 130.14%);
   color: #fff;
   border: none;
   cursor: pointer;
 }
 
 .check-button:hover {
-  background-color: #bba3df;
+  background: #6a0dad;
 }
 
 .pincode-details {
-  margin-top: 30px;
+  margin-top: 150px;
   justify-content: center;
 }
 
@@ -113,6 +135,7 @@ table {
   table-layout: fixed;
   margin-top: -20px;
   margin-bottom: 30px;
+  color: #000000;
 }
 
 thead th {
