@@ -1,9 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './Pincode.css';
 import pincodeData from './pincodeData';
-import pinimg from "../assets/image 6.png";
-import V from "../assets/V.png";
-import G from "../assets/G.png";
+import pinimg from "../assets/Pinimg.png";
 
 const Pincode = () => {
   const [originPincode, setOriginPincode] = useState('');
@@ -71,10 +69,13 @@ const Pincode = () => {
     <div className="pincode-serviceability-page">
       <header>
       <div class="Header-imgp">
-    <img src={pinimg}/>
+    <img src={pinimg} className='Header-imgp1'/>
 </div>
         <div className="header-content">
-          <h1>Search by Pincodes</h1>
+        <div className='overlay-blockp'>
+            <label1 htmlFor="inputField1"><br></br>&nbsp;&nbsp;&nbsp;&nbsp;Pincode Serviceability <br></br>&nbsp;&nbsp;&nbsp;&nbsp;Search by pincodes</label1>
+          
+            </div>
           <div className="input-container">
             <div className="input-group">
               <label htmlFor="origin-pincode">Origin Pincode:</label>
@@ -111,32 +112,35 @@ const Pincode = () => {
       {pincodeDetails && (
         <div ref={pincodeDetailsRef} className="pincode-details">
           <table>
-            <thead>
-              <tr>
-                <th>Pincode</th>
-                <th>Service</th>
-                <th>City</th>
-                <th>State</th>
-                <th>ODA</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>{pincodeDetails.originDetails.pincode}</td>
-                <td>Yes</td>
-                <td>{pincodeDetails.originDetails.city}</td>
-                <td>{pincodeDetails.originDetails.state}</td>
-                <td>N/A</td>
-              </tr>
-              <tr>
-                <td>{pincodeDetails.destinationDetails.pincode}</td>
-                <td>Yes</td>
-                <td>{pincodeDetails.destinationDetails.city}</td>
-                <td>{pincodeDetails.destinationDetails.state}</td>
-                <td>{pincodeDetails.destinationDetails.ODA}</td>
-              </tr>
-            </tbody>
-          </table>
+      <thead>
+        <tr>
+          <th>Origin</th>
+          <th>Destination</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{pincodeDetails.originDetails.pincode}</td>
+          <td>{pincodeDetails.destinationDetails.pincode}</td>
+        </tr>
+        <tr>
+          <td>Yes</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>{pincodeDetails.originDetails.city}</td>
+          <td>{pincodeDetails.destinationDetails.city}</td>
+        </tr>
+        <tr>
+          <td>{pincodeDetails.originDetails.state}</td>
+          <td>{pincodeDetails.destinationDetails.state}</td>
+        </tr>
+        <tr>
+          <td>N/A</td>
+          <td>{pincodeDetails.destinationDetails.ODA}</td>
+        </tr>
+      </tbody>
+    </table>
           <div className="statement">
             *IF ODA(Out of Delivery Area) IS TRUE EXTRA CHARGES ARE APPLICABLE
           </div>
