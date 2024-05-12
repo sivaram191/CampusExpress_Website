@@ -1,28 +1,48 @@
-// Booking.js
-
 import React from 'react';
+import { useLocation } from 'react-router-dom';
+
 import './Booking.css';
 
 function Booking() {
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const verifiedPhoneNumber = searchParams.get("phoneNumber");
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
     const formObject = {};
     formData.forEach((value, key) => {
-      formObject[key] = value;
+        formObject[key] = value;
     });
-    const response = await fetch('https://script.google.com/macros/s/AKfycby2fRvbw8nwoFfVhDewVPgQ6QXxDLmLg-HfeU5ZERhy9FXhJ06QPGEyctqPV_JWtZPh-A/exec', {
-      method: 'POST',
-      body: JSON.stringify(formObject),
-    });
-    if (response.ok) {
-      console.log('Form data sent successfully!');
-      // Add any additional logic here, like displaying a success message.
-    } else {
-      console.error('Failed to send form data.');
-      // Add error handling logic here.
+
+    // Disable the submit button to prevent multiple submissions
+    event.target.querySelector('button[type="submit"]').setAttribute('disabled', true);
+
+    try {
+        const response = await fetch('https://script.google.com/macros/s/AKfycby2fRvbw8nwoFfVhDewVPgQ6QXxDLmLg-HfeU5ZERhy9FXhJ06QPGEyctqPV_JWtZPh-A/exec', {
+            method: 'POST',
+            body: JSON.stringify(formObject),
+        });
+
+        if (response.ok) {
+            console.log('Form data sent successfully!');
+            // Reset the form fields
+            event.target.reset();
+            // Redirect to Otp page
+            window.location.href = '/Confirmation';
+        } else {
+            console.error('Failed to send form data.');
+        }
+    } catch (error) {
+        console.error('Error occurred:', error);
+    } finally {
+        // Re-enable the submit button after the request is completed
+        event.target.querySelector('button[type="submit"]').removeAttribute('disabled');
     }
-  };
+};
+
+
 
   return (
     <div className="login-root">
@@ -38,7 +58,7 @@ function Booking() {
                 <input type="number" placeholder="Pincode" required name="senderPincode" />
               </div>
               <div className="row">
-                <input type="number" placeholder="Phone Number" required name="senderPhoneNumber" />
+                <input type="number" placeholder="Phone Number" required name="senderPhoneNumber" defaultValue={verifiedPhoneNumber}  />
                 <input type="text" placeholder="City" required name="senderCity" />
               </div>
               <div className="row">
@@ -95,38 +115,10 @@ function Booking() {
           <button type="submit">Submit</button>
         </div>
       </form>
-      <div className="box-root flex-flex flex-direction--column" style={{ minHeight: '100vh', flexGrow: 1 }}>
-        <div className="loginbackground box-background--white padding-top--64">
-          <div className="loginbackground-gridContainer">
-            <div className="box-root flex-flex" style={{ gridArea: '4 / 2 / auto / 5' }}>
-              <div className="box-root box-divider--light-all-2 animationLeftRight tans3s" style={{ flexGrow: 1 }}></div>
-            </div>
-            <div className="box-root flex-flex" style={{ gridArea: '6 / start / auto / 2' }}>
-              <div className="box-root box-background--blue800" style={{ flexGrow: 1 }}></div>
-            </div>
-            <div className="box-root flex-flex" style={{ gridArea: '7 / start / auto / 4' }}>
-              <div className="box-root box-background--blue animationLeftRight" style={{ flexGrow: 1 }}></div>
-            </div>
-            <div className="box-root flex-flex" style={{ gridArea: '8 / 4 / auto / 6' }}>
-              <div className="box-root box-background--gray100 animationLeftRight tans3s" style={{ flexGrow: 1 }}></div>
-            </div>
-            <div className="box-root flex-flex" style={{ gridArea: '2 / 15 / auto / end' }}>
-              <div className="box-root box-background--cyan200 animationRightLeft tans4s" style={{ flexGrow: 1 }}></div>
-            </div>
-            <div className="box-root flex-flex" style={{ gridArea: '3 / 14 / auto / end' }}>
-              <div className="box-root box-background--blue animationRightLeft" style={{ flexGrow: 1 }}></div>
-            </div>
-            <div className="box-root flex-flex" style={{ gridArea: '4 / 17 / auto / 20' }}>
-              <div className="box-root box-background--gray100 animationRightLeft tans4s" style={{ flexGrow: 1 }}></div>
-            </div>
-            <div className="box-root flex-flex" style={{ gridArea: '5 / 14 / auto / 17' }}>
-              <div className="box-root box-divider--light-all-2 animationRightLeft tans3s" style={{ flexGrow: 1 }}></div>
-            </div>
-          </div>
-        </div>
-      </div>
+      
     </div>
   );
 }
 
 export default Booking;
+
